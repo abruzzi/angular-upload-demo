@@ -5,6 +5,10 @@ get '/' do
 	File.open('views/index.html').read
 end
 
+get '/ng' do
+	File.open('views/ng-file-upload-index.html').read
+end
+
 # Handle GET-request (Show the upload form)
 get "/upload" do
   haml :upload
