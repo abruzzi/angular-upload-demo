@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Upload</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+    <body>
+		<div ng-app="app">
+		    <div ng-controller="AppController">
+		        <input type="file" name="myfile" nv-file-select uploader="uploader"/><br/>
+		        <ul>
+		            <li ng-repeat="item in uploader.queue">
+		                Name: <span ng-bind="item.file.name"></span><br/>
+		                <button ng-click="item.upload()">upload</button>
+		            </li>
+		        </ul>
+		    </div>
+		</div>        
+
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-file-upload/dist/angular-file-upload.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
